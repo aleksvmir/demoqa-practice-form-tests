@@ -13,7 +13,6 @@ public class PracticeFormTests {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
         Configuration.timeout = 5000;
     }
 
@@ -25,6 +24,9 @@ public class PracticeFormTests {
     @Test
     void fillFormTests() {
         open("/automation-practice-form"); // Открываем страницу
+        executeJavaScript("$('#fixedban').remove()"); // Удаление возможных баннеров
+        executeJavaScript("$('footer').remove()"); // Удаление возможных баннеров
+
         $("#firstName").setValue("Vladimir"); // Заполняем поле "Имя"
         $("#lastName").setValue("Alekseev"); // Заполняем поле "Фамилия"
         $("#userEmail").setValue("aetirodev@gmail.com"); // Заполняем поле "Email"
