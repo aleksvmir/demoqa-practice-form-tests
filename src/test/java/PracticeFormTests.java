@@ -44,7 +44,7 @@ public class PracticeFormTests {
         $("#state").click(); // Кликаем для выбора штата
         $("#react-select-3-input").setValue("Haryana").pressEnter(); // Выбираем штат "Haryana"
         $("#city").click(); // Кликаем для выбора города
-        $("#react-select-4-input").setValue("Panipat").pressEnter(); // Выбираем город "Karnal"
+        $("#react-select-4-input").setValue("Panipat").pressEnter(); // Выбираем город "Panipat"
         $("#submit").click(); // Нажимаем кнопку "Submit"
 
         // Проверяем, что введенные данные отображаются корректно
