@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTests {
@@ -45,9 +46,9 @@ public class PracticeFormTests {
         $("#uploadPicture").uploadFromClasspath("photo.png"); // Загружаем изображение
         $("#currentAddress").setValue("district 9"); // Заполняем поле "Адрес"
         $("#state").click(); // Кликаем для выбора штата
-        $("#react-select-3-input").setValue("Haryana").pressEnter(); // Выбираем штат "Haryana"
+        $(byText("Haryana")).click(); // Выбираем штат "Haryana"
         $("#city").click(); // Кликаем для выбора города
-        $("#react-select-4-input").setValue("Panipat").pressEnter(); // Выбираем город "Panipat"
+        $(byText("Panipat")).click(); // Выбираем город "Panipat"
         $("#submit").click(); // Нажимаем кнопку "Submit"
 
         // Проверяем, что введенные данные отображаются корректно
