@@ -25,31 +25,31 @@ public class PracticeFormTests {
 
     @Test
     void fillFormTests() {
-        open("/automation-practice-form"); // Открываем страницу
-        executeJavaScript("$('#fixedban').remove()"); // Удаление возможных баннеров
-        executeJavaScript("$('footer').remove()"); // Удаление возможных баннеров
+        open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
-        $("#firstName").setValue("Vladimir"); // Заполняем поле "Имя"
-        $("#lastName").setValue("Alekseev"); // Заполняем поле "Фамилия"
-        $("#userEmail").setValue("aetirodev@gmail.com"); // Заполняем поле "Email"
-        $("label[for='gender-radio-1']").click(); // Выбираем мужской пол
-        $("#userNumber").setValue("0123456789"); // Заполняем поле "Номер телефона"
-        $("[id=dateOfBirthInput]").click(); // Кликаем для ввода даты рождения
-        $("[class=react-datepicker__year-select]>[value='1991']").click(); // Выбираем год рождения
-        $("[class=react-datepicker__month-select]>[value='10']").click(); // Выбираем месяц рождения
-        $(".react-datepicker__month .react-datepicker__day--012").click(); // Выбираем день рождения
-        $("#subjectsContainer").click(); // Кликаем для выбора предмета
-        $("#subjectsInput").setValue("Arts").pressEnter(); // Выбираем предмет "Arts"
-        $("#subjectsInput").setValue("Computer Science").pressEnter(); // Выбираем предмет "Computer Science"
-        $("label[for='hobbies-checkbox-2']").click(); // Выбираем хобби "Reading"
-        $("label[for='hobbies-checkbox-3']").click(); // Выбираем хобби "Music"
-        $("#uploadPicture").uploadFromClasspath("photo.png"); // Загружаем изображение
-        $("#currentAddress").setValue("district 9"); // Заполняем поле "Адрес"
-        $("#state").click(); // Кликаем для выбора штата
-        $(byText("Haryana")).click(); // Выбираем штат "Haryana"
-        $("#city").click(); // Кликаем для выбора города
-        $(byText("Panipat")).click(); // Выбираем город "Panipat"
-        $("#submit").click(); // Нажимаем кнопку "Submit"
+        $("#firstName").setValue("Vladimir");
+        $("#lastName").setValue("Alekseev");
+        $("#userEmail").setValue("aetirodev@gmail.com");
+        $("label[for='gender-radio-1']").click();
+        $("#userNumber").setValue("0123456789");
+        $("[id=dateOfBirthInput]").click();
+        $("[class=react-datepicker__year-select]>[value='1991']").click();
+        $("[class=react-datepicker__month-select]>[value='10']").click();
+        $(".react-datepicker__month .react-datepicker__day--012").click();
+        $("#subjectsContainer").click();
+        $("#subjectsInput").setValue("Arts").pressEnter();
+        $("#subjectsInput").setValue("Computer Science").pressEnter();
+        $("label[for='hobbies-checkbox-2']").click();
+        $("label[for='hobbies-checkbox-3']").click();
+        $("#uploadPicture").uploadFromClasspath("photo.png");
+        $("#currentAddress").setValue("district 9");
+        $("#state").click();
+        $(byText("Haryana")).click();
+        $("#city").click();
+        $(byText("Panipat")).click();
+        $("#submit").click();
 
         // Проверяем, что введенные данные отображаются корректно
         $(".table-responsive").shouldHave(text("Vladimir Alekseev"));
