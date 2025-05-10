@@ -10,16 +10,15 @@ import static com.codeborne.selenide.Selenide.*;
 public class PracticeFormTests {
 
     @BeforeAll
-    static void beforeAll() {
+    static void configureBrowser() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 5000;
-        // Configuration.holdBrowserOpen = true;
     }
 
     @AfterAll
-    static void afterAll() {
+    static void closeBrowser() {
         closeWebDriver();
     }
 
@@ -51,7 +50,6 @@ public class PracticeFormTests {
         $(byText("Panipat")).click();
         $("#submit").click();
 
-        // Проверяем, что введенные данные отображаются корректно
         $(".table-responsive").shouldHave(text("Vladimir Alekseev"));
         $(".table-responsive").shouldHave(text("aetirodev@gmail.com"));
         $(".table-responsive").shouldHave(text("Male"));
